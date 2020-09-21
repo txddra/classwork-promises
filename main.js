@@ -1,8 +1,9 @@
 // 1.
-// Create a promise called myFirstPromise
+// Create a promise called myFirstPromise  
+let rand = Math.floor(Math.random()* 10) + 1;
 let myFirstPromise = new Promise (function(resolve, reject){
   let bool = true; 
-  let rand = Math.floor(Math.random()* 10) + 1;
+
   if(bool){
     setTimeout(() => {
  //i hope that this is the correct way to do this
@@ -22,13 +23,13 @@ myFirstPromise.then((data) =>{
 console.log(`I have my random number ${data} and I will multiply it by 5.`)
 let x = data * rand;
 return x;
-});
-
-myFirstPromise.then(() => {
-
+}).then((x) => {
+console.log(`Here is the result of my random number multiplied by 5 : ${x}`)
 }
 
 )
+
+
 // Inside the promise
 // Create a boolean variable check and set it to true
 // Create a variable rand and it should calculate a random number between 1 and 10
