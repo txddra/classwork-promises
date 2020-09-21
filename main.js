@@ -1,7 +1,7 @@
 // 1.
 // Create a promise called myFirstPromise
 let myFirstPromise = new Promise (function(resolve, reject){
-  
+  let bool = true; 
 })
 // Inside the promise
 // Create a boolean variable check and set it to true
