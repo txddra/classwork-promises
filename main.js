@@ -2,17 +2,18 @@
 // Create a promise called myFirstPromise  
 
 let myFirstPromise = new Promise(function (resolve, reject) {
-  let bool = true;
+  let bool = false;
   let rand = Math.floor(Math.random() * 10) + 1;
-  if (bool) {
+  if (!bool) {
     setTimeout(() => {
       //i hope that this is the correct way to do this
-      resolve(rand)
+      reject('Cannot computer random number')
+      // resolve(rand)
     }, 2000)
   } else {
     setTimeout(() => {
-      reject(`Cannot computer random number`)
-    })
+      resolve(rand)
+    },200)
   }
 })
 
@@ -26,7 +27,9 @@ myFirstPromise.then((data) => {
 
   }
 
-)
+).catch((err)=>{
+console.log(err)
+})
 
 
 // Inside the promise
