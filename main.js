@@ -1,32 +1,30 @@
 // 1.
 // Create a promise called myFirstPromise  
 
-let myFirstPromise = new Promise (function(resolve, reject){
-  let bool = true; 
-let rand = Math.floor(Math.random()* 10) + 1;
-  if(bool){
+let myFirstPromise = new Promise(function (resolve, reject) {
+  let bool = true;
+  let rand = Math.floor(Math.random() * 10) + 1;
+  if (bool) {
     setTimeout(() => {
- //i hope that this is the correct way to do this
-    resolve(rand)
-    }, 2000
-    )
-  }else{
-    setTimeout(() =>{
+      //i hope that this is the correct way to do this
+      resolve(rand)
+    }, 2000)
+  } else {
+    setTimeout(() => {
       reject(`Cannot computer random number`)
-    }
-    )
+    })
   }
 })
 
-myFirstPromise.then((data) =>{
+myFirstPromise.then((data) => {
   //stuck here
-console.log(`I have my random number ${data} and I will multiply it by 5.`)
-let x = data * 5;
-return x;
+  console.log(`I have my random number ${data} and I will multiply it by 5.`)
+  let x = data * 5;
+  return x;
 }).then((x) => {
-console.log(`Here is the result of my random number multiplied by 5 : ${x}`)
+    console.log(`Here is the result of my random number multiplied by 5 : ${x}`)
 
-}
+  }
 
 )
 
@@ -69,8 +67,26 @@ console.log(`Here is the result of my random number multiplied by 5 : ${x}`)
 // Handle the error in case there is one
 // Test by setting your error variable to false then true
 
-let data = [
-  { firstName: 'Joe', lastName: 'Peters' },
-  { firstName: 'Doug', lastName: 'Lawson' },
-  { firstName: 'Sandra', lastName: 'Mathers' },
+let data = [{
+    firstName: 'Joe',
+    lastName: 'Peters'
+  },
+  {
+    firstName: 'Doug',
+    lastName: 'Lawson'
+  },
+  {
+    firstName: 'Sandra',
+    lastName: 'Mathers'
+  },
 ];
+
+
+// let getDataPromise= new Promise(function(resolve, reject){
+//   let bool = false;
+//   if(!bool){
+//     setTimeout(() => {
+//       reject('Something went wrong');
+//     }, 4000)
+//   }
+// })
