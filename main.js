@@ -1,6 +1,8 @@
 // 1.
 // Create a promise called myFirstPromise
-
+let myFirstPromise = new Promise (function(resolve, reject){
+  
+})
 // Inside the promise
 // Create a boolean variable check and set it to true
 // Create a variable rand and it should calculate a random number between 1 and 10
