@@ -9,9 +9,26 @@ let myFirstPromise = new Promise (function(resolve, reject){
     resolve(rand)
     }, 2000
     )
-   
+  }else{
+    setTimeout(() =>{
+      reject(`Cannot computer random number`)
+    }
+    )
   }
 })
+
+myFirstPromise.then((data) =>{
+  //stuck here
+console.log(`I have my random number ${data} and I will multiply it by 5.`)
+let x = data * rand;
+return x;
+});
+
+myFirstPromise.then(() => {
+
+}
+
+)
 // Inside the promise
 // Create a boolean variable check and set it to true
 // Create a variable rand and it should calculate a random number between 1 and 10
