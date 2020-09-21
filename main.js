@@ -2,6 +2,7 @@
 // Create a promise called myFirstPromise
 let myFirstPromise = new Promise (function(resolve, reject){
   let bool = true; 
+  let rand = Math.floor(Math.random()* 10) + 1;
 })
 // Inside the promise
 // Create a boolean variable check and set it to true
