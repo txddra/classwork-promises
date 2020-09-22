@@ -2,7 +2,7 @@
 // Create a promise called myFirstPromise  
 
 let myFirstPromise = new Promise(function (resolve, reject) {
-  let bool = false;
+  let bool = true;
   let rand = Math.floor(Math.random() * 10) + 1;
   if (!bool) {
     setTimeout(() => {
@@ -29,7 +29,7 @@ myFirstPromise.then((data) => {
 
 ).catch((err)=>{
 console.log(err)
-})
+});
 
 
 // Inside the promise
@@ -63,6 +63,8 @@ console.log(err)
 // create a conditional that handles the rejection if there is an error with a message 'Something went wrong'
 // Create a set timeout function that after 4 seconds returns the data (we are mimicking a 3rd party API call)
 
+
+
 // consume your promise
 // take the result and log the data
 // take data and output 'Hello Joe Peters' for each object
@@ -85,11 +87,39 @@ let data = [{
 ];
 
 
-// let getDataPromise= new Promise(function(resolve, reject){
-//   let bool = false;
-//   if(!bool){
-//     setTimeout(() => {
-//       reject('Something went wrong');
-//     }, 4000)
-//   }
+let getDataPromise = new Promise(function(resolve, reject){
+  let bool = false;
+  if(!bool){
+    setTimeout(() => {
+      reject('Something went wrong');
+    }, 4000)
+  }
+});
+
+
+
+getDataPromise(data)
+.then((data)=>{
+  data.map((person) => {
+    console.log(`Hello ${person.firstName} ${person.lastName}.`);
+  });
+})
+  // console.log()
+// }
+
+// )
+//   let full = Object.Values(data)
+// console.log(full)
+
+// }
+// ).then((person) =>{
+// console.log(`hello ${data.firstName} ${data.lastName}.);
+
 // })
+.catch((error) =>{
+  console.log(error);
+  console.log('Something went wrong')
+});
+
+console.log(data.firstName)
+console.log(getDataPromise)
