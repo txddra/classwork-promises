@@ -13,7 +13,7 @@ let myFirstPromise = new Promise(function (resolve, reject) {
   } else {
     setTimeout(() => {
       resolve(rand)
-    },200)
+    }, 200)
   }
 })
 
@@ -27,8 +27,8 @@ myFirstPromise.then((data) => {
 
   }
 
-).catch((err)=>{
-console.log(err)
+).catch((err) => {
+  console.log(err)
 });
 
 
@@ -126,12 +126,12 @@ let data = [{
 
 //solution
 
-const getDataPromise =(myData)=>{
-let error = false;
+const getDataPromise = (myData) => {
+  let error = false;
 
-  return new Promise((resolve, reject)=>{
-    if(error) reject('Something went wrong');
-    setTimeout(()=>{
+  return new Promise((resolve, reject) => {
+    if (error) reject('Something went wrong');
+    setTimeout(() => {
       resolve(myData);
     }, 4000)
   });
@@ -139,12 +139,12 @@ let error = false;
 };
 //second part consume
 getDataPromise(data)
-.then((gottenData)=>{
-  // console.log(gottenData)
-  gottenData.forEach((item)=>{
-    console.log(`Hello ${item.firstName} ${item.lastName}`);
+  .then((gottenData) => {
+    // console.log(gottenData)
+    gottenData.forEach((item) => {
+      console.log(`Hello ${item.firstName} ${item.lastName}`);
+    })
   })
-})
-.catch((err)=>{
-  console.log(err)
-})
+  .catch((err) => {
+    console.log(err)
+  })
