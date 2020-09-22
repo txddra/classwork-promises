@@ -87,39 +87,64 @@ let data = [{
 ];
 
 
-let getDataPromise = new Promise(function(resolve, reject){
-  let bool = false;
-  if(!bool){
-    setTimeout(() => {
-      reject('Something went wrong');
-    }, 4000)
-  }
-});
+// let getDataPromise = new Promise(function(resolve, reject){
+//   let bool = false;
+//   if(!bool){
+//     setTimeout(() => {
+//       reject('Something went wrong');
+//     }, 4000)
+//   }
+// });
 
 
 
-getDataPromise(data)
-.then((data)=>{
-  data.map((person) => {
-    console.log(`Hello ${person.firstName} ${person.lastName}.`);
-  });
-})
-  // console.log()
-// }
-
-// )
-//   let full = Object.Values(data)
-// console.log(full)
-
-// }
-// ).then((person) =>{
-// console.log(`hello ${data.firstName} ${data.lastName}.);
-
+// getDataPromise(data)
+// .then((data)=>{
+//   data.map((person) => {
+//     console.log(`Hello ${person.firstName} ${person.lastName}.`);
+//   });
 // })
-.catch((error) =>{
-  console.log(error);
-  console.log('Something went wrong')
-});
+//   // console.log()
+// // }
 
-console.log(data.firstName)
-console.log(getDataPromise)
+// // )
+// //   let full = Object.Values(data)
+// // console.log(full)
+
+// // }
+// // ).then((person) =>{
+// // console.log(`hello ${data.firstName} ${data.lastName}.);
+
+// // })
+// .catch((error) =>{
+//   console.log(error);
+//   console.log('Something went wrong')
+// });
+
+// console.log(data.firstName)
+// console.log(getDataPromise)
+
+//solution
+
+const getDataPromise =(myData)=>{
+let error = false;
+
+  return new Promise((resolve, reject)=>{
+    if(error) reject('Something went wrong');
+    setTimeout(()=>{
+      resolve(myData);
+    }, 4000)
+  });
+
+};
+//second part consume
+getDataPromise(data)
+.then((gottenData)=>{
+  // console.log(gottenData)
+  gottenData.forEach((item)=>{
+    console.log(`Hello ${item.firstName} ${item.lastName}`);
+  })
+})
+.catch((err)=>{
+  console.log(err)
+})
